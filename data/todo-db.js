@@ -1,7 +1,13 @@
 const todos = [
-  {text: 'Feed llama', done: true, _id: 125223},
-  {text: 'Sleep under the stars', done: false, _id: 127904},
-  {text: 'Buy milk', done: false, _id: 139608},
+  {text: 'Coding and programming', done: false, _id: 125223},
+  {text: 'Networking', done: true, _id: 127904},
+  {text: 'Cryptography', done: false, _id: 139608},
+  {text: 'Code reviewing', done: false, _id: 322521},
+  {text: 'Database knowledge', done: false, _id: 409721},
+  {text: 'Communication', done: true, _id: 806931},
+  {text: 'Electrical engineering', done: false, _id: 111348},
+  {text: 'Software development life cycle knowledge', done: false, _id: 223200},
+  {text: 'Grit', done: true, _id: 579296},
 ]
 
 const find = (conditions, callback) => {

@@ -7,7 +7,7 @@
   <title>Dev Skills Lab</title>
 </head>
 <body>
-  <h1>Todos</h1>
+  <h1>Dev Skills To Develop</h1>
   <% if(error) { %>
     <h2><%= error %></h2>
   <% } %>
@@ -16,7 +16,7 @@
       <li>
         <a href="/todos/<%= todo._id %>"><%= todo.text %></a>
           - 
-        <%= todo.done ? 'done' : 'not done' %>
+        <%= todo.done ? 'developed' : 'not developed' %>
       </li>
     <% }) %>
   </ul>
