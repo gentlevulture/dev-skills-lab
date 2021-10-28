@@ -8,6 +8,10 @@ const todos = [
   {text: 'Electrical engineering', done: false, _id: 111348},
   {text: 'Software development life cycle knowledge', done: false, _id: 223200},
   {text: 'Grit', done: true, _id: 579296},
+  {text: 'More Grit', done: true, _id: 579297},
+  {text: 'Still More Grit', done: true, _id: 579298},
+  {text: 'Even More Grit', done: true, _id: 579299},
+  {text: 'Some More Grit', done: false, _id: 579300},
 ]
 
 const find = (conditions, callback) => {
@@ -37,7 +41,30 @@ const findById = (id, callback) =>{
   }
 }
 
+function create(todo, callback) {
+  // Add the id
+  todo._id = Date.now() % 1000000
+  // New todos wouldn't be done
+  todo.done = false
+  todos.push(todo)
+  return callback(null, todo)
+}
+
+function findByIdAndDelete(id, callback) {
+  try { 
+    // Find the index based on the _id of the todo object
+    const idx = todos.findIndex(todo => todo._id == parseInt(id))
+    const deletedTodo = todos.splice(idx, 1)
+    if (!deletedTodo.length ) throw new Error ('No todo was deleted')
+    return callback(null, deletedTodo[0])
+  } catch(error) {
+    return callback(error, null)
+  }
+}
+
 export { 
 	find,
-  findById
+  findById,
+  create,
+  findByIdAndDelete,
 }
